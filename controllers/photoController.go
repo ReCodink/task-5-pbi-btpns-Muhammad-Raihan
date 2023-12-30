@@ -35,7 +35,7 @@ func UploadPhotoProfile(ctx *gin.Context) {
 		Title:    req.Title,
 		Caption:  req.Caption,
 		PhotoUrl: req.PhotoUrl,
-		UserID:   userID.(uint),
+		UserID:   userID.(string),
 	}
 
 	db := db.Init()
@@ -86,7 +86,8 @@ func UpdatePhotoProfile(ctx *gin.Context) {
 	photoID := ctx.Param("id")
 	userID, _ := ctx.Get("userID")
 
-	file, err := ctx.FormFile("photo_file")
+	file, err := ctx.FormFile("PhotoUrl")
+
 	if err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{"error": "Missing photo file"})
 		return
