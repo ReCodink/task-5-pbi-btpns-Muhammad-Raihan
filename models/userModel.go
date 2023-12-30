@@ -11,11 +11,9 @@ import (
 
 type User struct {
 	gorm.Model
-	ID        uint    `gorm:"primaryKey" json:"user_id" binding:"required"`
 	Username  string  `gorm:"not null" json:"username" binding:"required"`
 	Email     string  `gorm:"unique; not null" json:"email" binding:"required"` // Pastikan validasi format email
 	Password  string  `gorm:"not null" json:"password" binding:"required"`
-	PhotoID   string  `json:"photo_id"`
 	Photos    []Photo `gorm:"foreignKey:UserID;constraint:OnUpdate:CASCADE,OnDelete:CASCADE" json:"photos"`
 	CreatedAt time.Time
 	UpdatedAt time.Time
