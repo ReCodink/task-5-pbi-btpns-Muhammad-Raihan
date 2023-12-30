@@ -10,7 +10,7 @@
 
 2. Must have installed PostgreSQL
 
-3. Create Database, you can use this steps, if you don't use PGAdmin 4 : 
+3. Create Database, you can use these steps, if you don't use PGAdmin 4 : 
     - Open Terminal
     - Entry PostgreSQL with this command : 
     ```bash
@@ -20,36 +20,36 @@
     psql -U recodink
     ```
 
-    - Create Database with this name: 
+    - Create a Database with this name: 
     ```bash
     CREATE DATABASE photo_profile_app;
     ```
 
-    - for checking, you can typing this: 
+    - for checking, you can type this: 
     ```bash
     \l
     ```
 
-    - exit psql, you can typing this:
+    - exit psql, you can type this:
     ```bash
     \q
     ```
 
-    if you use PGAdmin 4 but doesn't know how to create, see this article: 
+    if you use PGAdmin 4 but don't know how to create, see this article: 
     Create Database with PGAdmin 4: [here](https://www.tutorialsteacher.com/postgresql/create-database) 
 
 4. Create .env, you can see at .env.example
 
-5. type this command in terminal or command prompt
+5. type this command in the terminal or command prompt
     ```bash
     export GIN_MODE=release
     ```
-6. type this command in terminal for run this app :
+6. type this command in the terminal to run this app :
     ```bash
     go run main.go
     ```
  
-7. that's it, you can use this feature api in this app: 
+7. that's it, you can use this feature API in this app: 
     - Auth
     ```bash
     - Register User
@@ -97,7 +97,7 @@
     ```
     {
     "email": "recodink16@gmail.com",
-    "password":"recodink16"
+    "password": "recodink16"
     }
     ```
 
@@ -184,7 +184,7 @@
     > PUT http://localhost:8080/api/photos/:id
     
     * Update User Photo Profile
-    * Requires authetication via JWT Token
+    * Requires authentication via JWT Token
     * Request Body :
     ```
     {
@@ -218,7 +218,7 @@
             "CreatedAt": "2023-12-30T06:09:01.500456+07:00",
             "UpdatedAt": "2023-12-30T06:11:04.83792719+07:00"
         },
-        "message": "Photo Update Sucessfully",
+        "message": "Photo Update Successfully",
         "success": true
         }
 
@@ -252,7 +252,7 @@
     * Request Body :
     ```
     {
-        "Username" : "recodink",
+        "Username": "recodink",
         "Email": "recodink16@gmail.com",
         "password": "recodink1607"
     }
@@ -280,7 +280,9 @@
 
     * Response Body :
         * 200 OK
+        ```
         {
             "message": "User Deleted Successfully",
             "success": true
         }
+        ```
